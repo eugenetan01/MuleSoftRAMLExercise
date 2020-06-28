@@ -1,0 +1,32 @@
+
+#%RAML 0.8
+title: RAMLwithMULE
+version: 1.0
+baseUri: http://localhost:8080/GlobalWeather
+/GetCitiesByCountry:
+    get:
+        description: Find cities of this particular country
+        queryParameters:
+          CountryName:
+            displayName: CountryName
+            type: string
+            description: Find cities via this country key
+            example: Australia
+            required: false
+
+/GetWeather:
+    get:
+        description: Find weather of these countries/cities
+        queryParameters:
+          CountryName:
+            displayName: CountryName
+            type: string
+            description: Find Weather of cities in this country 
+            example: Australia
+            required: false
+          CityName:
+            displayName: CityName
+            type: string
+            description: Find Weather of this city
+            example: Bankstown Airport
+            required: false
